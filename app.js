@@ -1,5 +1,4 @@
 var express = require('express');
-var AV=require('leanengine');
 
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -28,7 +27,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/token',userTokenRouter);
-app.use(AV.express());
+
+
+// 健康监测 router
+app.use('/__engine/1/ping', function(req, res) {
+    res.end(JSON.stringify({
+        "runtime": "nodejs-" + process.version,
+        "version": "custom"
+    }));
+});
+
+// 云函数列表
+app.get('/1.1/_ops/functions/metadatas', function(req, res) {
+    res.end(JSON.stringify([]));
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
