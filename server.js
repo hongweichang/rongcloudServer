@@ -16,8 +16,8 @@ var AV=require('leanengine');
 
 var port = normalizePort(process.env.LEANCLOUD_APP_PORT || '3000');
 //var port = process.env.LEANCLOUD_APP_PORT;
-app.set('port', port);
 app.use(AV.express());
+app.set('port', port);
 
 /**
  * Create HTTP server.
@@ -30,6 +30,7 @@ var server = http.createServer(app);
  */
 
 server.listen(port);
+//app.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
