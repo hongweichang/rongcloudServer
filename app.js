@@ -1,4 +1,6 @@
 var express = require('express');
+var AV=require('leanengine');
+
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -25,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/userToken',userTokenRouter);
+app.use('/token',userTokenRouter);
 app.use(AV.express());
 
 // catch 404 and forward to error handler
