@@ -14,8 +14,8 @@ var http = require('http');
 
 //var port = normalizePort(process.env.PORT || '3000');
 
-var port = normalizePort(process.env.LEANCLOUD_APP_PORT || '3000');
-//var port = process.env.LEANCLOUD_APP_PORT;
+//var port = normalizePort(process.env.LEANCLOUD_APP_PORT || '3000');
+var port = process.env.LEANCLOUD_APP_PORT;
 app.set('port', port);
 
 /**
