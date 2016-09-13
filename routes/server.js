@@ -7,7 +7,7 @@ var rongcloudSdk = require('rongcloud-sdk');
 //rongcloudSdk.init('uwd1c0sxdu7b1', 'ObBMPjIPNx');
 //QBmk3Xp01Gvc
 
-rongcloudSdk.init('pkfcgjstfp5t8', 'QBmk3Xp01Gvc');
+rongcloudSdk.init('uwd1c0sxdu7b1', 'ObBMPjlPNx');
 
 
 
