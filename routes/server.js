@@ -10,7 +10,7 @@ rongcloudSdk.init('uwd1c0sxdu7b1', 'ObBMPjIPNx');
 
 userTokenRouter.use(bodyParser.json());
 
-useTockenRouter.route('/')
+userTokenRouter.route('/')
     .post(function(req,res,next){
         var userId = req.body.xiaoqiangId + "";
         var userName = req.body.xiaoruiName;
