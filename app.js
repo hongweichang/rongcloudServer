@@ -11,6 +11,17 @@ var users = require('./routes/users');
 var userTokenRouter=require('./routes/server.js');
 
 var app = express();
+var AV =require('leanengine');
+
+AV.init({
+
+    appId: process.env.LEANCLOUD_APP_ID || 'y1KkcjF85x9lUfUql65GAXap-gzGzoHsz', // 你的 app id
+    appKey: process.env.LEANCLOUD_APP_KEY || '75RfYQQlCrA3hXC8NDQTDLkp', // 你的 app key
+    masterKey: process.env.LEANCLOUD_APP_MASTER_KEY || 'awfx3dYCleNRAoN5vKI88Eph' // 你的 master key
+});
+
+// 如果不希望使用 masterKey 权限，可以将下面一行删除
+AV.Cloud.useMasterKey();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
