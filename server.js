@@ -7,7 +7,7 @@
 var app = require('./app');
 var debug = require('debug')('rongcloudServer:server');
 var http = require('http');
-
+var AV=require('leanengine');
 /**
  * Get port from environment and store in Express.
  */
@@ -17,6 +17,7 @@ var http = require('http');
 var port = normalizePort(process.env.LEANCLOUD_APP_PORT || '3000');
 //var port = process.env.LEANCLOUD_APP_PORT;
 app.set('port', port);
+app.use(AV.express());
 
 /**
  * Create HTTP server.
@@ -28,8 +29,7 @@ var server = http.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-//server.listen(port);
-app.listen(port);
+server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
