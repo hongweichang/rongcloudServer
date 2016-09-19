@@ -4,11 +4,8 @@ var bodyParser = require('body-parser');
 var userTokenRouter = express.Router();
 
 var rongcloudSdk = require('rongcloud-sdk');
-//rongcloudSdk.init('uwd1c0sxdu7b1', 'ObBMPjIPNx');
-//QBmk3Xp01Gvc
 
-rongcloudSdk.init('uwd1c0sxdu7b1', 'ObBMPjlPNx');
-
+rongcloudSdk.init('pkfcgjstfp5t8', 'QBmk3Xp01Gvc');
 
 
 userTokenRouter.use(bodyParser.json());
